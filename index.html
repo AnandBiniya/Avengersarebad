@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Add some more1</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, enim eos cumque eum incidunt facere debitis obcaecati perferendis officiis sit itaque similique dolorum in maxime, veniam, dolores tempore modi optio.</p>
-</body>
+    <style>
+      #throw_dice{
+  display:grid;
+  width: 200px;
+  height:200px;
+  background-color: blueviolet;
+ margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!--Create a button that says, 'Throw dice' button. Give this button HTML id as "throw_dice"-->
+      <button id="throw_dice" onclick="throwdice()">
+      dice 
+      </button>
+    </div>
+  </body>
 </html>
+<script>
+function throwdice(){
+  let num;
+  num=Math.floor(Math.random()*6)+1;
+
+  localStorage.setItem("number",JSON.stringify(num));
+  window.location.href="display.html"
+
+  var btn=document.getElementById("throw_dice")
+  btn.innerHTML=num;
+
+  document.querySelector("div").append(btn)
+
+  
+}
+  
+</script>
